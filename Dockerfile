@@ -26,4 +26,5 @@ RUN set -eux; \
 
 COPY entrypoint.sh /entrypoint.sh
 
+VOLUME ["/var/lib/zerotier-one"]
 ENTRYPOINT ["/entrypoint.sh"]
