@@ -1,6 +1,6 @@
-FROM alpine:3.8
+FROM alpine:3.10
 
-ENV ZEROTIER_VERSION=1.2.12
+ENV ZEROTIER_VERSION=1.4.6
 
 RUN set -eux; \
     apk add --no-cache \
