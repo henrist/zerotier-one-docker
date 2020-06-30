@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.12
 
 ENV ZEROTIER_VERSION=1.4.6
 
