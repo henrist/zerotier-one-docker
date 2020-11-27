@@ -1,11 +1,9 @@
 FROM alpine:3.12@sha256:d7342993700f8cd7aba8496c2d0e57be0666e80b4c441925fc6f9361fa81d10e
 
 # renovate: datasource=github-releases depName=zerotier/ZeroTierOne
-ENV ZEROTIER_VERSION=1.6.0
+ENV ZEROTIER_VERSION=1.6.1
 
-# This commit includes a unreleased bug fix after the 1.6 release
-# needed to run in Alpine Linux.
-ENV ZEROTIER_COMMIT=167645ba6da857dc11ac430b716a5fff8711a6c9
+ENV ZEROTIER_COMMIT=af6d01e79bd05650476f732b5a19a3878d9aa36c
 
 RUN set -eux; \
     apk add --no-cache \
