@@ -28,6 +28,7 @@ RUN set -eux; \
     zerotier-one -v; \
     if [ "$(zerotier-one -v)" != "$ZEROTIER_VERSION" ]; then \
       >&2 echo "FATAL: unexpected version - expected $ZEROTIER_VERSION"; \
+      exit 1; \
     fi
 
 COPY entrypoint.sh /entrypoint.sh
