@@ -17,7 +17,7 @@ RUN set -eux; \
     wget https://github.com/zerotier/ZeroTierOne/archive/$ZEROTIER_COMMIT.zip -O /zerotier.zip; \
     unzip /zerotier.zip -d /; \
     cd /ZeroTierOne-$ZEROTIER_COMMIT; \
-    make; \
+    make -j 2 ZT_OFFICIAL_RELEASE=1; \
     DESTDIR=/tmp/build make install; \
     mv /tmp/build/usr/sbin/* /usr/sbin/; \
     mkdir /var/lib/zerotier-one; \
