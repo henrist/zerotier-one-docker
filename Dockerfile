@@ -1,4 +1,4 @@
-FROM alpine:3.13@sha256:08d6ca16c60fe7490c03d10dc339d9fd8ea67c6466dea8d558526b1330a85930
+FROM alpine:3.13@sha256:69e70a79f2d41ab5d637de98c1e0b055206ba40a8145e7bddb55ccc04e13cf8f
 
 # renovate: datasource=github-releases depName=zerotier/ZeroTierOne
 ENV ZEROTIER_VERSION=1.6.4
