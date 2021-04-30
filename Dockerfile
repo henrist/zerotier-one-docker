@@ -1,9 +1,9 @@
 FROM alpine:3.13@sha256:69e70a79f2d41ab5d637de98c1e0b055206ba40a8145e7bddb55ccc04e13cf8f
 
 # renovate: datasource=github-releases depName=zerotier/ZeroTierOne
-ENV ZEROTIER_VERSION=1.6.4
+ENV ZEROTIER_VERSION=1.6.5
 
-ENV ZEROTIER_COMMIT=e8390afad5ca119e603d342af25b349fd584f77f
+ENV ZEROTIER_COMMIT=e8f7d5ef9e7ba6be0b2163cfa31f8817ba5b18f4
 
 RUN set -eux; \
     apk add --no-cache \
