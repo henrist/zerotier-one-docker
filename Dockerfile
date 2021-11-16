@@ -1,7 +1,7 @@
 FROM alpine:3.13@sha256:69e70a79f2d41ab5d637de98c1e0b055206ba40a8145e7bddb55ccc04e13cf8f
 
 # renovate: datasource=github-releases depName=zerotier/ZeroTierOne
-ENV ZEROTIER_VERSION=1.6.6
+ENV ZEROTIER_VERSION=1.8.3
 
 ENV ZEROTIER_COMMIT=eb1cafcd0194876ab2a5d24ac369091b2a25e9d3
 
