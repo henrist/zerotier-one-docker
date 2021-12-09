@@ -7,7 +7,7 @@ on:
       # Exclude those in release.yml
       - "!master"
       - "!next"
-      - "!1.6"
+      - "!1.8"
   pull_request:
     branches:
       - master
