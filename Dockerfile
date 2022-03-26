@@ -1,10 +1,10 @@
 FROM alpine:3.15@sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c70fa8c9300
 
 # renovate: datasource=github-tags depName=zerotier/ZeroTierOne
-ENV ZEROTIER_VERSION=1.8.4
+ENV ZEROTIER_VERSION=1.8.6
 
-# renovate: datasource=github-tags depName=zerotier/ZeroTierOne tag=1.8.4
-ENV ZEROTIER_COMMIT=eac56a2e25bbd27f77505cbd0c21b86abdfbd36b
+# renovate: datasource=github-tags depName=zerotier/ZeroTierOne tag=1.8.6
+ENV ZEROTIER_COMMIT=4a2c75a60941e75f36ed1961458a42fbd12ea4ac
 
 RUN set -eux; \
     apk add --no-cache \
