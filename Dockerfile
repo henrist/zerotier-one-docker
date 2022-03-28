@@ -12,8 +12,10 @@ RUN set -eux; \
       libstdc++ \
     ; \
     apk add --no-cache --virtual build-dependencies \
+      cargo \
       build-base \
       linux-headers \
+      openssl-dev \
     ; \
     wget https://github.com/zerotier/ZeroTierOne/archive/$ZEROTIER_COMMIT.zip -O /zerotier.zip; \
     unzip /zerotier.zip -d /; \
