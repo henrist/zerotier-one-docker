@@ -27,7 +27,7 @@ jobs:
         id: extract_branch
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           push: true
           tags: henrist/zerotier-one:${{ steps.extract_branch.outputs.branch }}
