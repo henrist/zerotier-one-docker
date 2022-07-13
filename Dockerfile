@@ -1,7 +1,7 @@
 FROM alpine:3.16@sha256:4ff3ca91275773af45cb4b0834e12b7eb47d1c18f770a0b151381cd227f4c253 as builder
 
-# renovate: datasource=github-tags depName=zerotier/ZeroTierOne tag=1.8.4
-ENV ZEROTIER_COMMIT=eac56a2e25bbd27f77505cbd0c21b86abdfbd36b
+# renovate: datasource=github-tags depName=zerotier/ZeroTierOne tag=1.10.1
+ENV ZEROTIER_COMMIT=651f45fe29155c462f4e56dd74f4a347f6861d0d
 
 RUN apk add --no-cache build-base linux-headers
 
@@ -9,7 +9,7 @@ RUN set -eux; \
     wget https://github.com/zerotier/ZeroTierOne/archive/$ZEROTIER_COMMIT.zip -O /zerotier.zip; \
     unzip /zerotier.zip -d /; \
     cd /ZeroTierOne-$ZEROTIER_COMMIT; \
-    make; \
+    make ZT_SSO_SUPPORTED=0; \
     DESTDIR=/tmp/build make install
 
 FROM alpine:3.16@sha256:4ff3ca91275773af45cb4b0834e12b7eb47d1c18f770a0b151381cd227f4c253
@@ -17,7 +17,7 @@ FROM alpine:3.16@sha256:4ff3ca91275773af45cb4b0834e12b7eb47d1c18f770a0b151381cd2
 COPY --from=builder /tmp/build/usr/sbin/* /usr/sbin/
 
 # renovate: datasource=github-tags depName=zerotier/ZeroTierOne
-ENV ZEROTIER_VERSION=1.8.4
+ENV ZEROTIER_VERSION=1.10.1
 
 RUN set -eux; \
     apk add --no-cache libc6-compat libstdc++; \
