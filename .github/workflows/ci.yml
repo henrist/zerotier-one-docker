@@ -25,10 +25,12 @@ jobs:
         shell: bash
         run: |
           branch_name=${GITHUB_REF#refs/heads/}
-          tags=henrist/zerotier-one:$branch_name
+          tags=henrist/zerotier-one
           if [ "$branch_name" = "master" ]; then
             major_minor=$(grep ZEROTIER_VERSION= Dockerfile | sed -r 's/.+=([0-9]+\.[0-9]+)\..+/\1/')
             tags=henrist/zerotier-one:latest,henrist/zerotier-one:$major_minor
+          elif [ "$branch_name" = "next" ]; then
+            tags=henrist/zerotier-one:next
           fi
           echo "##[set-output name=tags;]$(echo "$tags")"
         id: extract_tags
