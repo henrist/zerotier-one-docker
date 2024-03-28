@@ -1,7 +1,7 @@
-FROM alpine:3.16@sha256:bc41182d7ef5ffc53a40b044e725193bc10142a1243f395ee852a8d9730fc2ad as builder
+FROM alpine:3.19@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b as builder
 
-# renovate: datasource=github-tags depName=zerotier/ZeroTierOne tag=1.10.1
-ENV ZEROTIER_COMMIT=651f45fe29155c462f4e56dd74f4a347f6861d0d
+# renovate: datasource=github-tags depName=zerotier/ZeroTierOne tag=1.12.2
+ENV ZEROTIER_COMMIT=327eb9013b39809835a912c9117a0b9669f4661f
 
 RUN apk add --no-cache build-base linux-headers
 
@@ -12,12 +12,12 @@ RUN set -eux; \
     make ZT_SSO_SUPPORTED=0; \
     DESTDIR=/tmp/build make install
 
-FROM alpine:3.16@sha256:bc41182d7ef5ffc53a40b044e725193bc10142a1243f395ee852a8d9730fc2ad
+FROM alpine:3.19@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
 
 COPY --from=builder /tmp/build/usr/sbin/* /usr/sbin/
 
 # renovate: datasource=github-tags depName=zerotier/ZeroTierOne
-ENV ZEROTIER_VERSION=1.10.1
+ENV ZEROTIER_VERSION=1.12.2
 
 RUN set -eux; \
     apk add --no-cache libc6-compat libstdc++; \
