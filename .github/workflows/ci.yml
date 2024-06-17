@@ -36,7 +36,7 @@ jobs:
         id: extract_tags
 
       - name: Build Docker image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/next' }}
