@@ -1,7 +1,7 @@
 FROM alpine:3.19@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b as builder
 
-# renovate: datasource=github-tags depName=zerotier/ZeroTierOne tag=1.12.2
-ENV ZEROTIER_COMMIT=327eb9013b39809835a912c9117a0b9669f4661f
+# renovate: datasource=github-tags depName=zerotier/ZeroTierOne tag=1.16.0
+ENV ZEROTIER_COMMIT=7b7d39becc4a775d33e8c0f673856fb91dea7f31
 
 RUN apk add --no-cache build-base linux-headers
 
@@ -17,7 +17,7 @@ FROM alpine:3.19@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761
 COPY --from=builder /tmp/build/usr/sbin/* /usr/sbin/
 
 # renovate: datasource=github-tags depName=zerotier/ZeroTierOne
-ENV ZEROTIER_VERSION=1.12.2
+ENV ZEROTIER_VERSION=1.16.0
 
 RUN set -eux; \
     apk add --no-cache libc6-compat libstdc++; \
