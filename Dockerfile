@@ -1,4 +1,4 @@
-FROM alpine:3.23@sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11 AS builder
+FROM alpine:3.23@sha256:85fe1e81d6758c208f3e1eed4338a1997e19d4be002d4dd32d3100c9a8c010a0 AS builder
 
 # renovate: datasource=github-tags depName=zerotier/ZeroTierOne tag=1.16.2
 ENV ZEROTIER_COMMIT=fc5c3ec22090b5b2a0f274e863651fe9ca489bf4
@@ -12,7 +12,7 @@ RUN set -eux; \
     make ZT_SSO_SUPPORTED=0; \
     DESTDIR=/tmp/build make install
 
-FROM alpine:3.23@sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11
+FROM alpine:3.23@sha256:85fe1e81d6758c208f3e1eed4338a1997e19d4be002d4dd32d3100c9a8c010a0
 
 COPY --from=builder /tmp/build/usr/sbin/* /usr/sbin/
 
